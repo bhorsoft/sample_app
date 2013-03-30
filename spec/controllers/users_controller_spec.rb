@@ -282,7 +282,7 @@ describe UsersController do
       @user = Factory(:user)
     end
 
-    describe "for non-signed-in users" do
+    describe "for non-logged-in users" do
 
       it "should deny access to 'edit'" do
         get :edit, :id => @user
@@ -296,7 +296,7 @@ describe UsersController do
       end
     end
 
-    describe "for signed-in users" do
+    describe "for logged-in users" do
       
       before(:each) do
         wrong_user = Factory(:user, :email => "user@example.net")
